@@ -41,6 +41,8 @@ gem 'bootstrap-sass-rails'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'heroku'
+
 group :production do
 	gem 'pg'
 end
