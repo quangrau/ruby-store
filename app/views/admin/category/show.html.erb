@@ -1,0 +1,22 @@
+<h3>Category: <%= @category.name %></h3>
+<h4>Products: <%= @category.products.length %></h4>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @category.products.each do |product| %>
+		<tr>
+			<td><%= product.id %></td>
+			<td><%= product.name %></td>
+			<td><%= product.price %></td>
+			
+		</tr>
+		<% end %>
+	</tbody>
+</table>

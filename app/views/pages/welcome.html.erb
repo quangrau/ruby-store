@@ -1,0 +1,57 @@
+<pre><strong>API USAGE DOCUMENT</strong>
+___________________________________________________________________
+<span style="color:#333399;"><strong>Basic Authentication:</strong>
+    username: myfinance
+    password: credit123
+
+<strong>Content Type :</strong>
+   application/xml or application/json
+
+<strong>Body:</strong>
+   You can pass xml or json data in Body</span>
+<span style="color:#333399;">   
+   sample json body
+
+    {
+     "email" : "test@<span class="skimlinks-unlinked">yopmail.com</span>", 
+     "first_name" : "arun", 
+     "last_name" : "yadav"</span>
+<span style="color:#333399;">    }
+
+   Sample xml body
+
+    &lt;user&gt;
+      &lt;email&gt;"test@<span class="skimlinks-unlinked">yopmail.com"</span>&gt;
+      &lt;first-name&gt;arun&lt;/first-name&gt;
+      &lt;last-name&gt;yadav&lt;/last-name&gt;
+    &lt;/user&gt;
+<span style="color:#ff0000;"><strong>
+NOTE : Content Type should be set to application/xml for xml data in body 
+and to application/json for json data in body</strong></span>
+
+<strong>API Requests:</strong>
+
+<strong>=&gt; listing users</strong>
+   url: http://localhost:3000/api/users
+   method: GET
+   body : not needed
+
+<strong>=&gt; Retrieving User detail</strong>
+  url: http://localhost:3000/api/users/:id 
+  method: GET
+  body : not needed
+
+<strong>=&gt; creating users</strong>
+   url: http://localhost:3000/api/users
+   method: Post
+   Body : It can be xml or json
+
+<strong>=&gt; Updating User</strong>
+  url: http://localhost:3000/api/users/:id 
+  method: PUT
+  Body : It can be xml or json
+  <strong>
+=&gt; Deleting User</strong> 
+  url: http://localhost:3000/api/users/:id 
+  method: DELETE
+  body : not needed</span></pre>
