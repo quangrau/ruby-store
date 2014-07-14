@@ -18,7 +18,7 @@ class Api::ProductController < ApplicationController
 	def show
 		respond_to do |format|
 			format.json { render json: @product }
-			format.xml { render xml: @products }
+			format.xml { render xml: @product }
 		end
 	end
 

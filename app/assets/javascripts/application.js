@@ -15,3 +15,13 @@
 //= require turbolinks
 //= require_tree .
 //= require twitter/bootstrap
+
+
+function ready(){
+	$('#show-product-form').on('click', function() {
+		$('.product-form').slideToggle(200);
+	});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

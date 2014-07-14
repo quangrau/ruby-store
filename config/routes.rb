@@ -7,13 +7,15 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :category, :product, :user
+    resources :category, :products, :users
   end
+
+  get 'admin/products' => 'admin/products#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  #get 'admin/index'
+  get 'pages/doc' => 'pages#doc'
 
   # You can have the root of your site routed with "root"
   root 'pages#welcome'

@@ -20,6 +20,7 @@ class Admin::CategoryController < ApplicationController
 	# TODO: show category detail, list all products in this category 
 	def show
 		@category = Category.find(params[:id])
+		@product = Product.new
 	end
 
 	#new action

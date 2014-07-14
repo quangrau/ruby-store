@@ -1,0 +1,32 @@
+<div class="head-box">
+	<div class="container">
+		<h1>Users</h1>
+		<h3>List all of users in store</h3>
+	</div>
+</div>
+<div class="container" id="main">
+	<%= link_to 'Create new Product', new_admin_user_path, class: "btn btn-success pull-right" %>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Facebook Link</th>
+				<th colspan="2"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.name %></td>
+				<td><%= user.facebook_link %></td>
+				<td><%= link_to 'Edit', edit_user_product_path(user) %></td>
+			    <td><%= link_to 'Destroy', admin_user_path(user),
+			                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
