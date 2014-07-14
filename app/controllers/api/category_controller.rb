@@ -1,10 +1,17 @@
 class Api::CategoryController < ApplicationController
-	skip_before_filter :verify_authenticity_token
+	http_basic_authenticate_with :name => "quangrau", :password => "123456"
+
+  	skip_before_filter :authenticate_user! # we do not need devise authentication here
+	# skip_before_filter :verify_authenticity_token
 
 	before_filter :fetch_category, :except => [:index, :create]
 
 	def fetch_category
-		@category = Category.find(params[:id])
+		begin
+		    @category = Category.find(params[:id])
+		rescue => e
+		       render json: {error: e.message}
+		end
 	end
 
 	def index

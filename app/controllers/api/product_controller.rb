@@ -1,5 +1,7 @@
 class Api::ProductController < ApplicationController
-	skip_before_filter :verify_authenticity_token
+	http_basic_authenticate_with :name => "quangrau", :password => "123456"
+	
+	# skip_before_filter :verify_authenticity_token
 
 	before_filter :fetch_product, :except => [:index, :create]
 

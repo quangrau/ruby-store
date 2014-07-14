@@ -1,0 +1,23 @@
+<div class="head-box">
+	<div class="container">
+		<h1>User detail</h1>
+		<h3>Show user info</h3>
+	</div>
+</div>
+<div class="container" id="main">
+<div class="row">
+	<div class="col-md-6">
+		<blockquote>
+			<p>User Name: <strong class="text-primary"><%= @user.name %></strong></p>
+			<p>Facebook Link: <strong class="text-primary"><%= @user.facebook_link %></strong></p>
+			<p class="action">
+			<%= link_to 'Edit', edit_admin_user_path(@user) %> | <%= link_to 'Destroy', [:admin, @user],
+			                    method: :delete, data: { confirm: 'Are you sure?' } %>
+		</blockquote>
+	</div>
+</div>
+</div>
+
+
+
+
