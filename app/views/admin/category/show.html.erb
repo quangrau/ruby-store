@@ -1,5 +1,26 @@
-<h3>Category: <%= @category.name %></h3>
-<h4>Products: <%= @category.products.length %></h4>
+<div class="head-box">
+	<div class="container">
+		<h1>Category detail</h1>
+		<h3>Show category info and list all products in this category</h3>
+	</div>
+</div>
+<div class="container" id="main">
+<div class="row">
+	<div class="col-md-6">
+		<blockquote>
+			<p>Category: <strong class="text-primary"><%= @category.name %></strong></p>
+			<p>Products: <strong class="text-primary"><%= @category.products.length %></strong></p>
+		</blockquote>
+	</div>
+	<div class="col-md-6">
+		<div class="pull-right">
+			<%= link_to 'Create new Category', new_admin_category_path, class: "btn btn-primary" %>
+			<%= link_to 'Add new Product', new_admin_category_path, class: "btn btn-success" %>
+		</div>
+	</div>
+</div>
+	
+	
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -20,3 +41,8 @@
 		<% end %>
 	</tbody>
 </table>
+</div>
+
+
+
+

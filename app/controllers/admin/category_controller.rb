@@ -1,21 +1,19 @@
 class Admin::CategoryController < ApplicationController
-	
-	require 'rest_client'
+	# skip authenticate 
+	skip_before_filter :verify_authenticity_token
 
-	USERNAME = "quangrau" # needed to access the APi
-	PASSWORD = "123456" # needed to access the APi
-	API_BASE_URL = "http://api.ruby-store.dev:3000" # base url of the API
+	# constructor
+	#before_filter :fetch_category, :except => [:index, :create, :new]
+
+	# return obj Category by params :id
+	def fetch_category
+		@category = Category.find(params[:id])
+	end
 
 	# index action
 	# TODO: list all categories
 	def index
-		uri = "#{API_BASE_URL}/category" # specifying json format in the URl
-
-	    rest_resource = RestClient::Resource.new(uri, USERNAME, PASSWORD)
-
-	    categories = rest_resource.get
-
-	    @categories = JSON.parse(categories, :symbolize_names => true)
+		@categories = Category.all
 	end
 
 	# show action
@@ -30,15 +28,17 @@ class Admin::CategoryController < ApplicationController
 		@category = Category.new
 	end
 
+	#edit action
+	#show form to update category info
 	def edit
-		@category = @category = Category.find(params[:id])
+		@category = Category.find(params[:id])
 	end
 
 	def create
 		@category = Category.new(category_params)
 
 		if @category.save
-			redirect_to @category
+			redirect_to admin_category_path(@category)
 		else
 			render 'new'
 		end
@@ -48,7 +48,7 @@ class Admin::CategoryController < ApplicationController
 		@category = Category.find(params[:id])
 
 		if @category.update(category_params)
-			redirect_to @category
+			redirect_to admin_category_path(@category)
 		else
 			render 'edit'
 		end
