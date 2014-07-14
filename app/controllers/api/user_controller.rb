@@ -69,9 +69,3 @@ class Api::UserController < ApplicationController
 	    	params.permit(:category_id, :name, :price)
 	    end
 end
-
-Uh thì cuộc sống vốn dĩ đã không công bằng. Nhưng đâu cần phải quá bất công và khốn nạn như vậy nhỉ? 
-
-Mấy tháng trước, mấy anh em còn đi ăn ốc, em kể về những hành trình em đã đi qua, e giành hết tuổi trẻ của mình để làm những công việc thiện nguyện, e mang tri thức, sức trẻ đến với mọi người. Vậy mà ông trời nỡ bắt e rời bỏ mọi người, bỏ lại gia đình, bè bạn, bỏ lại bao ước mơ còn dang dở... Ông trời thật bất công em nhỉ?
-
-Thôi thì coi như đây chỉ là cõi tạm, ai rồi cũng phải đi qua, em đã có một hành trình không dài, nhưng rất đẹp, để giờ đây, mọi người khóc, còn em thì mỉm cười...
