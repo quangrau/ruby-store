@@ -7,8 +7,8 @@
 <div class="container" id="main">
 <pre>
 <span style="color:#333399;"><strong>Basic Authentication:</strong>
-    username: myfinance
-    password: credit123
+    username: quangrau
+    password: 123456
 
 <strong>Content Type :</strong>
    application/xml or application/json
@@ -19,46 +19,71 @@
    sample json body
 
     {
-     "email" : "test@<span class="skimlinks-unlinked">yopmail.com</span>", 
-     "first_name" : "arun", 
-     "last_name" : "yadav"</span>
+     "name" : "product name", 
+     "category_id" : "1", 
+     "price" : "1000000"</span>
 <span style="color:#333399;">    }
 
    Sample xml body
 
-    &lt;user&gt;
-      &lt;email&gt;"test@<span class="skimlinks-unlinked">yopmail.com"</span>&gt;
-      &lt;first-name&gt;arun&lt;/first-name&gt;
-      &lt;last-name&gt;yadav&lt;/last-name&gt;
-    &lt;/user&gt;
+    &lt;product&gt;
+      &lt;name&gt;"product name"&lt;/name&gt;
+      &lt;category_id&gt;1&lt;/category_id&gt;
+      &lt;price&gt;1000000&lt;/price&gt;
+    &lt;/product&gt;
 <span style="color:#ff0000;"><strong>
 NOTE : Content Type should be set to application/xml for xml data in body 
 and to application/json for json data in body</strong></span>
 
 <strong>API Requests:</strong>
 
-<strong>=&gt; listing users</strong>
-   url: http://localhost:3000/api/users
+<strong>=&gt; listing category</strong>
+   url: http://api.localhost:3000/category
    method: GET
    body : not needed
 
-<strong>=&gt; Retrieving User detail</strong>
-  url: http://localhost:3000/api/users/:id 
+<strong>=&gt; Retrieving category detail</strong>
+  url: http://api.localhost:3000/category/:id 
   method: GET
   body : not needed
 
-<strong>=&gt; creating users</strong>
-   url: http://localhost:3000/api/users
+<strong>=&gt; creating category</strong>
+   url: http://api.localhost:3000/category
    method: Post
    Body : It can be xml or json
 
-<strong>=&gt; Updating User</strong>
-  url: http://localhost:3000/api/users/:id 
+<strong>=&gt; Updating category</strong>
+  url: http://api.localhost:3000/category/:id 
+  method: PUT
+  Body : It can be xml or json
+<strong>
+=&gt; Deleting category</strong> 
+  url: http://api.localhost:3000/category/:id 
+  method: DELETE
+  body : not needed
+
+<strong>=&gt; listing product</strong>
+   url: http://api.localhost:3000/product
+   method: GET
+   body : not needed
+
+<strong>=&gt; Retrieving product detail</strong>
+  url: http://api.localhost:3000/product/:id 
+  method: GET
+  body : not needed
+
+<strong>=&gt; creating product</strong>
+   url: http://api.localhost:3000/product
+   method: Post
+   Body : It can be xml or json
+
+<strong>=&gt; Updating product</strong>
+  url: http://api.localhost:3000/product/:id 
   method: PUT
   Body : It can be xml or json
   <strong>
-=&gt; Deleting User</strong> 
-  url: http://localhost:3000/api/users/:id 
+=&gt; Deleting product</strong> 
+  url: http://api.localhost:3000/product/:id 
   method: DELETE
   body : not needed</span>
   </pre>
