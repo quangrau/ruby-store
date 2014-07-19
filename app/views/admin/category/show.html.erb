@@ -59,8 +59,7 @@
 				<td><%= product.price %></td>
 				<td class="action">
 					<%= link_to 'Show', [:admin, product] %> | 
-			    	<%= link_to 'Edit', [:admin, product],
-			    				method: :put %> | 
+			    	<%= link_to 'Edit', edit_admin_product_path %> | 
 			    	<%= link_to 'Destroy', [:admin, product],
 			                    method: :delete, data: { confirm: 'Are you sure?' } %>
 				</td>

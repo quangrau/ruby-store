@@ -1,24 +1,23 @@
 Rails.application.routes.draw do
 
-  constraints subdomain: 'api' do
-    namespace :api, path: '/' do
+  namespace :api do
       resources :category, :product, :defaults => {:format => 'json'}
-    end
   end
 
   namespace :admin do
     resources :category, :products, :users
+    root 'category#index'
   end
-
-  get 'admin/products' => 'admin/products#index'
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  get 'pages/doc' => 'pages#doc'
 
   # You can have the root of your site routed with "root"
   root 'pages#welcome'
+
+  # Route to document page
+  get 'pages/doc' => 'pages#doc'
+
+  %w( 404 422 500 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

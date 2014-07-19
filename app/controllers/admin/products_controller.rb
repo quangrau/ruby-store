@@ -56,7 +56,6 @@ class Admin::ProductsController < ApplicationController
 	    # list between create and update. Also, you can specialize this method
 	    # with per-user checking of permissible attributes.
 	    def product_params
-	    	
-	    	params.require(:product).permit(:category_id, :name, :price)
+	    	params.require(:product).permit(:name, :price)
 	    end
 end
