@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   namespace :api do
-      resources :category, :product, :defaults => {:format => 'json'}
+      resources :categories, :products, :defaults => {:format => 'json'}
+
+      # get 'categories' => 'category#index', :defaults => {:format => 'json'}
+      # get 'categories/:id' => 'category#show', :defaults => {:format => 'json'}
+      # post 'categories' => 'category#create', :defaults => {:format => 'json'}
+
+      # get 'products' => 'product#index', :defaults => {:format => 'json'}
+      # get 'products/:id' => 'product#show', :defaults => {:format => 'json'}
   end
 
   namespace :admin do
